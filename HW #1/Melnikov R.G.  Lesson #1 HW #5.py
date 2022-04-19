@@ -4,18 +4,17 @@
 байтовового в строковый тип на кириллице.
 """
 
+import platform
+import subprocess
+import chardet
 
-def value_type_list(value_list):
-    for i in value_list:
-        item = i.encode('utf-8')
-        print(f'Слово "{i}" \n в методе encode(utf-8): {item},'
-              f'\n и обратном методе decode(utf-8): {item.decode("utf-8")}')
+WEBS = ['yandex.ru', 'youtube.com']
+PARAM = '-n' if platform.system().lower() == 'windows' else '-c'
 
-
-WORD_1 = 'разработка'
-WORD_2 = 'администрирование'
-WORD_3 = 'protocol'
-WORD_4 = 'standard'
-WORDS = [WORD_1, WORD_2, WORD_3, WORD_4]
-
-value_type_list(WORDS)
+for web in WEBS:
+    args = ['ping', PARAM, '4', web]
+    subproc_ping = subprocess.Popen(args, stdout=subprocess.PIPE)
+    for line in subproc_ping.stdout:
+        result = chardet.detect(line)
+        line = line.decode(result['encoding']).encode('utf-8')
+        print(line.decode('utf-8'))
