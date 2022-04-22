@@ -6,13 +6,19 @@
 """
 import chardet
 
-file_name = 'test_file.txt'
-with open(file_name, 'rb') as f_n:
-    content = f_n.read()
-encoding = chardet.detect(content)['encoding']
-print(encoding)
+WORDS = ['сетевое программирование', 'сокет', 'декоратор']
+FILE_NAME = 'test_file.txt'
 
-with open(file_name, encoding='utf-8') as f_n:
-    for el_str in f_n:
-        print(el_str)
+with open(FILE_NAME, 'w', encoding='utf-8') as f:
+    for i in WORDS:
+        f.write(f'{i}\n')
+
+with open(FILE_NAME, 'rb') as f_n:
+    content = f_n.read()
+    encoding = chardet.detect(content)['encoding']
+    print(encoding)
+
+with open(FILE_NAME, encoding=encoding) as f_n:
+    content = f_n.read()
+    print(content)
 
