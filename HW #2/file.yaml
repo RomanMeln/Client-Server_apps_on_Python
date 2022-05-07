@@ -1,0 +1,11 @@
+items:
+- paper
+- sugar
+- oil
+- video_card
+items_quantity: 4
+items_price:
+  paper: 5€-10€
+  sugar: 15€-20€
+  oil: 90€-120€
+  video_card: 1000€-1200€
