@@ -1,0 +1,4 @@
+2022-05-15 13:28:07,085 DEBUG client.py Формирование сообщения на сервер: {'action': 'presence', 'time': 1652610487.085813}
+2022-05-15 13:28:07,085 DEBUG decorator_log.py Была вызвана функция msg_for_server c параметрами (), {}.Вызов из модуля __main__.Вызов из функции main().
+2022-05-15 13:28:07,085 DEBUG decorator_log.py Была вызвана функция send_message c параметрами (<socket.socket fd=392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 6111), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1652610487.085813}), {}.Вызов из модуля utils.Вызов из функции main().
+2022-05-15 13:28:07,085 DEBUG decorator_log.py Была вызвана функция get_message c параметрами (<socket.socket fd=392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 6111), raddr=('127.0.0.1', 7777)>,), {}.Вызов из модуля utils.Вызов из функции main().
